@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绕流</title>
+    <style>
+        .div1{
+            width: 600px;
+            height: 600px;
+            border: 1px solid red;
+        }
+        .div2{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            /*绕流
+            1.将颜色块设置浮动为left,向左浮动
+            2.文字块的宽度必须要大于颜色块的宽度
+                这样文字就会自动往上串
+                */
+            float: left;
+
+        }
+        .div3{
+            color: dodgerblue;
+            background-color: antiquewhite;
+            width: 200px;
+            height: auto;
+        }
+        .in{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+        .right{
+            /*
+            浮动float;
+            none:不浮动
+            left:向左
+            right:向右
+            */
+
+            float: right;
+        }
+        .red{background-color: red}
+        .yellow{background-color: yellow}
+        .blue{background-color: blue}
+        .out{
+            border: 5px solid black;
+            overflow: hidden;
+        }
+        .content{
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            overflow: auto;
+
+
+        }
+        /*采用伪类元素的处理方式*/
+        .out:after{
+            content: "";
+            display: block;
+            clear: both;
+
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+
+    <div class="div2"></div>
+    <div class="div3">哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈</div>
+</div>
+<br>
+<br>
+<br>
+
+<div class="out">
+<div class="in red right"></div>
+<div class="in yellow right"></div>
+<div class="in blue right"></div>
+</div>
+    <!--清除浮动:
+    1. 在三个色块后面再添加div,设置clear属性
+    2.给最外层设置溢出属性,设置内容溢出的处理情况
+    hidden: 超出的部分会被修剪
+    visible:超出部分不做处理,呈现在盒子之外,默认值
+    3.采用伪类元素的处理方式:用冒号表示
+        after:在元素处理之后
+        before:在元素处理之前的样式设置
+
+    -->
+    <!--<div style="clear: right"></div>-->
+
+<!---->
+<div class="content">
+    <span>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</span>
+</div>
+
+</body>
+</html>

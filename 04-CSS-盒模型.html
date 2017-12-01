@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒模型</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            /*边框*/
+            border: 1px solid black;
+            /*设置外边距margin */
+            /*外边距折叠: 当两个相邻组件设置的margin值一样时,
+                    会出现折叠情况,即两个组件的间距有一个不会相加
+                         当两个外边距设置的值不一样时,采用最大的值作为边距值*/
+
+            margin: 20px;
+
+        }
+        .div1{
+            background-color: red;
+            /*设置内边距*/
+            padding: 20px;
+            /*设置第一个颜色块下边距*/
+            margin-bottom: 20px;
+        }
+        .div2{
+            background-color: yellow;
+            margin-top: 100px;
+
+        }
+        .div3{background-color: blue}
+    </style>
+</head>
+<body>
+<div class="div1">
+    <p>我是谁</p>
+</div>
+<div class="div2">
+    <p>我在哪</p>
+</div>
+<div class="div3"></div>
+
+</body>
+</html>
